@@ -1,5 +1,7 @@
 Understanding static:
 
+System.out.println(a); where was an object and if we want a.name to get printed instead of some default text then we need to override toString method in the class to which this object was belonging. because println method calls obj.toString() method and if it is not overridded then it calls its default method
+
 static variable can be accessed using this.population as well as Class_name.population...     -> both are correct but convention says to use class name but when we use this what happens is it first search for this variable for this object if not found it checks class template where it fins it as static.
 
 When a member is declared static, it can be accessed before any objects of its class are created,
@@ -14,6 +16,7 @@ are talking about. In a static context, you don't have an instance, that's why y
 without explicitly mentioning an object reference.
 if one of them depends on instances then how can you have something inside it which depends on instances.
 but we can have static member being accessed inside non static member...that is we can use anything that is not dependent on object inside the one which depends on it.
+Nonstatic function can easily call a non static member
 In fact, you can access a non-static member in a static context by specifying the object reference explicitly :
 public class Human {
 
@@ -36,7 +39,7 @@ A static method can be accessed directly by the class name and doesn’t need an
 A static method cannot refer to "this" or "super" keywords in anyway
 
 If you need to do computation in order to initialize your static variables,
-you can declare a static block that gets executed exactly once, when the class is first loaded.
+you can declare a static block that gets executed exactly once, when the  CLASS IS FIRST LOADED.
 
 // Demonstrate static variables, methods, and blocks.
      class UseStatic {
@@ -57,7 +60,7 @@ you can declare a static block that gets executed exactly once, when the class i
 }
 
 As soon as the UseStatic class is loaded, all of the static statements are run. First, a is set to 3,
-then the static block executes, which prints a message and then initializes b to a*4 or 12. Then main( ) is called,
+then the static block executes, which prints a message and then initializes b to a*4 or 12. Then MAIN IS CALLED,
 which calls meth( ), passing 42 to x. The three println( ) statements refer to the two static variables a and b,
 as well as to the local variable x.
 
@@ -67,7 +70,7 @@ a = 3
 b = 12
 Note: main method is static, since it must be accessible for an application to run, before any instantiation takes place.
 
-NOTE: Only nested classes can be static.
+NOTE: Only nested classes can be static. whereas outer class cant be static becuase inner class is dependent on outer class inorder to make it non dependent we make it static but outer class is itself independent and hence not static
 NOTE: Static inner classes can have static variables
 
 You cant override the inherited static methods, as in java overriding takes place by resolving the type of object at
@@ -88,7 +91,8 @@ public class Static {
     }
 
     public static void main(String[] args) {
-        Test a = new Test("Kunal");
+        Test a = new Test("Kunal");            //was giving error when class Test was non static then we need instance of Static class to run inner class.
+        Making Test as static means it is not dependent on object of outer class but it can have its own objects
 
         Test b = new Test("Rahul");
 
@@ -97,8 +101,15 @@ public class Static {
     }
 }
 Because :
+Since static variables, methods, class are not dependent objects and we know objects are made during run time so here static members will be resolved at compile time...
 The static keyword may modify the declaration of a member type C within the body of a non-inner class or interface T.
 Its effect is to declare that C is not an inner class. Just as a static method of T has no current instance of T in its
 body, C also has no current instance of T, nor does it have any lexically enclosing instances.
 Here, test does not have any instance of it's outer class Static. Neither does main.
 But main & Test can have instances of each other.
+
+System.out.println();
+System is a class , out is a variable, println is a method. out is a reference variable of class PrintStream 
+public static final PrintStram out = NULL;
+out.prntln where dot binds reference variable with instance variable, so Printstream has println method which is being called by out.
+
