@@ -1,7 +1,12 @@
+println internally calls toString method (obj.toString()) and if toString method is not present inside obj method then it will take default toString method so inorder to make println behave according to us we need to override toString method
+
+
 Packages are containers for classes. They are used to keep the class name space compartmentalized.
 For example, a package allows you to create a class named List, which you can store in your own package without
-concern that it will collide with some other class named List stored elsewhere. Packages are stored in a hierarchical
-manner and are explicitly imported into new class definitions.
+concern that it will collide with some other class named List stored elsewhere. Packages are stored in a hierarchical (folder inside folder) manner and are explicitly imported into new class definitions.
+in different folder we can have files with same name
+for importing a method present in a folder...        ->         import static com.kunal.Messege.messege;    ->         for importing messege method inside Messege class... which is static
+if the file is in folder we need not to import other file
 
 The package is both a naming and a visibility control mechanism.
 
