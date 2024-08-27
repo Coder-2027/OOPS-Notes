@@ -12,7 +12,20 @@ Inbuilt :-
 
 OBJECT class is inside lang package
 
-Mathods available to us inside Object class which can be overridden
+Mathods available to us inside Object class which can be overridden:-
+1.  toString method 
+2.   finalize method :- gets called when garbage collector work ends
+3.    hashcode :- gives number representation of an object    -    unique representation, not an address its just a random integer value formed via some algo, we can also write our own algo, inorder to identify whether its same object or different
+4.    equals :- "==" is a operator and .equals() is a method, == checks whether both obj reference variable are pointing to same object or not., whereas .equals is checking content of object, we just need  to modify its implementation.
+
+public boolean equals (Object obj){
+    return this.num == ((ObjectDemo)obj).num;            //we are not directly receiving it as ObjectDemo because we know inorder to override something we need to use same signature.
+}
+
+instance of operator := to check if something is an instance of another class.
+ex. obj instance of A where A is a class whose reference is obj we can also write obj instance of Object which is also true it returns boolean value
+
+5.    getClass method:- ex. obj.getClass() using this we can get the class to which obj is referencing to now again using . wiwth it we can get more methods related to that class like getMethod(), getName()    this method is declared as final so we cannot iverride it.So to get information about class we can use this method
 
 Packages are containers for classes. They are used to keep the class name space compartmentalized.
 For example, a package allows you to create a class named List, which you can store in your own package without
