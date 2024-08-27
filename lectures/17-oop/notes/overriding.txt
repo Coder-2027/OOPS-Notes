@@ -63,3 +63,12 @@ class Child extends Parent{
 }
 
 Both overloading and overridding doesnot apply to instance variable  ->  hence polymorphism doesnot apply to it.
+
+ENCAPSULATION:-
+Wrapping up the implementation of data members and methods inside a class It hides the code in a single entity or unitso that it can be protectted from outside world.
+Solves implementation leel issue.It focuses on internal working.
+Refers to containment of information
+
+ABSTRACTION:-
+Hiding unnecessary details and only showing essential/valuable information. Ex: using abstract data types like ArrayList we just know using which method we can manipulate it but we dont know its internal implementation. Another example can be use of prinln method we dont care about how it is implemented.
+Solves design level issue.It focuses on external stuff. Can be acheived using abstract methods and interfaces.
