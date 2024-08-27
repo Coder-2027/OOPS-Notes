@@ -72,3 +72,12 @@ Refers to containment of information
 ABSTRACTION:-
 Hiding unnecessary details and only showing essential/valuable information. Ex: using abstract data types like ArrayList we just know using which method we can manipulate it but we dont know its internal implementation. Another example can be use of prinln method we dont care about how it is implemented.
 Solves design level issue.It focuses on external stuff. Can be acheived using abstract methods and interfaces.
+Refers to gaining of information.
+
+DATA HIDING VS ENCAPSULATION:
+Data hiding specifically focuses on hiding info from external (Data Security)
+Encapsulation refers to hiding complexity of systtem by putting it ina single class.
+in DH data must be private r protected whereas in encapsulation it canbe anything public, pvt, protected or default.
+
+Abstract data types :- we are able access them or manipulate them using some methods but how these are working internALLY we dont care about it.
+Data hiding is acheived by encapsulation and encapsulation is a sub process in data hiding
