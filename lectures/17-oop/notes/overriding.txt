@@ -1,3 +1,10 @@
+In order to check if a method is overridden or not simply type its annotatioon @Override if it gives an error then t is not grtting ovrridden else it was.
+Parent obj = new Child();      ->       here which method will be called depends on child this is known as upcastng. But that method should be a part of parent.
+So child type defines which method to run while parent class defines which method to access.
+Java determines which method to run when we have different version of same function in this case java uses dynamic method dispatch.
+
+When we try print an object then println internally calls tostring method of object and if it is not available then it uses default toString method available in Object class since we know that every class is a subclass of Object class.So inorder to make it behave as per our conveniance we will be overridding this toString method.
+
 In a class hierarchy, when a method in a subclass has the same name and type signature as a method in its superclass,
 then the method in the subclass is said to override the method in the superclass. When an overridden method is called
 from within its subclass, it will always refer to the version of that method defined by the subclass. The version of the
@@ -20,3 +27,39 @@ In other words, it is the type of the object being referred to (not the type of 
 that determines which version of an overridden method will be executed.
 
 If B extends A then you can override a method in A through B with changing the return type of method to B.
+
+Putting a final ona method we cannt override it this improves the performance because compiler is free here to make inline calls to such methods since it knows that these method willnt be overridden.
+Runtime polymoorphism is also known as late binding.
+Method calling resolved at compile time is known as early binding.
+Writting final in class call also helps preventing inheritance.  ->  implicitly it declares its method as final too.
+
+
+Overriding a static method is not possible, even if we again declare it in child class no matter it will be calling method of parent class only.even if the reference variable is of type parent and object is of child class it will call method of parent class. It alwasy calls parent one because no matter from which object we call it , we know static method doesnt depend on object.
+
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		// your code goes here
+        Child p = new Child();        //here greeting of child will be called
+        p.greeting();
+
+        Parent p = new Child();          //here greeting of parent will be called  ->  here dynamic method disptch will not hppen
+        p.greeting();
+	}
+}
+
+class Parent{
+    static void greeting(){
+        System.out.println("Inside Parent class");
+    }
+}
+
+class Child extends Parent{
+    // @Override                      // was givinf error.    overridding depends on object whereas static doesnot depend on object hencce static method can not be ovrridden.  
+    static void greeting(){
+        System.out.println("Inside Child class");
+    }
+}
+
+Both overloading and overridding doesnot apply to instance variable  ->  hence polymorphism doesnot apply to it.
