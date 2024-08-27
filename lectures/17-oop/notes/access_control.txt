@@ -9,12 +9,13 @@ protected applies only when inheritance is involved.
 
 When no access modifier is used, then by default the member of a class is public within its own package,
 but cannot be accessed outside of its package.
+Default keyword doesnt actually exist we say it as default if no access modifier is specified.
 
             │ Class │ Package │ Subclass │ Subclass │ World
             │       │         │(same pkg)│(diff pkg)│(diff pkg & not subclass)
 ────────────┼───────┼─────────┼──────────┼──────────┼──────────────────────────
 public      │   +   │    +    │    +     │     +    │   +
-────────────┼───────┼─────────┼──────────┼──────────┼──────────────────────────
+────────────┼───────┼─────────┼──────────┼──────────|──────────────────────────
 protected   │   +   │    +    │    +     │     +    │
 ────────────┼───────┼─────────┼──────────┼──────────┼──────────────────────────
 no modifier │   +   │    +    │    +     │          │
@@ -35,7 +36,9 @@ public class Base
 package packageTwo;
 public class Derived extends packageOne.Base{
     public void show(){
-        new Base().display();       // this is not working
+        new Base().display();       // this is not working            if this was in thhe same package then it will work as usual.
+//if above line was always true then threr have been no difference between private, protected, public.
+        Intution is that here Base class doesnt know whether Derived is extending Base or not.
         new Derived().display();    // is working
         display();//is working
     }
