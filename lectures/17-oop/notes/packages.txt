@@ -1,5 +1,18 @@
 println internally calls toString method (obj.toString()) and if toString method is not present inside obj method then it will take default toString method so inorder to make println behave according to us we need to override toString method
 
+Packages arre of two types :-     1.    User defined 2.    in built
+
+Inbuilt :- 
+    1. Lang package :- contains essential stuff of java, java language specific stuff
+    2. I/O :- file importing, optimize input output, buffer reader
+    3. Util :- ArrayList, Scanner, utility classes , data Structures, (collection framework - ex. binary search)
+    4. Applet :- related to developement
+    5. awt :- creating gui
+    6. net :- realted to networking
+
+OBJECT class is inside lang package
+
+Mathods available to us inside Object class which can be overridden
 
 Packages are containers for classes. They are used to keep the class name space compartmentalized.
 For example, a package allows you to create a class named List, which you can store in your own package without
