@@ -104,7 +104,7 @@ public class Main {
             System.out.println(e.getMessage());
         } catch (Exception e) {
             System.out.println("normal exception");
-        } finally {
+        } finally {                                            //WE CANNOT CREATAE MULTIPLE FINALLY BLOCK
             System.out.println("this will always execute");
         }
 
@@ -123,3 +123,17 @@ throw means we are throwing a new exception , whereas throws means to declare ex
 
 MAKING OUR OWN EXCEPTION :-
 
+package com.kunal.exceptionHandling;
+
+public class MyException extends Exception{
+
+    public MyException(String message) {
+        super(message);                //getMessege of exception
+    }
+}
+
+OBJECT CLONING :-
+Human h = new Human(Kunal);         here we are trying to makae a clone out of h using kunal object.
+but above process takes an extra processing time, so we use object cloonning.
+Here we are making an exact copy of object. Clone is a method in object class which can be used to make copies.
+To do this we must implement Cloneable Interface inside the class whose clone we are going to make
