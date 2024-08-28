@@ -136,4 +136,27 @@ OBJECT CLONING :-
 Human h = new Human(Kunal);         here we are trying to makae a clone out of h using kunal object.
 but above process takes an extra processing time, so we use object cloonning.
 Here we are making an exact copy of object. Clone is a method in object class which can be used to make copies.
-To do this we must implement Cloneable Interface inside the class whose clone we are going to make
+To do this we must implement Cloneable Interface inside the class whose clone we are going to make.
+Purpose: Marks a class as eligible for the clone() method of the Object class without throwing a CloneNotSupportedException. ay to tell JVM machine .So that JVM knows that it is allowd to clione
+
+@Override
+    public Object clone() throws CloneNotSupportedException{            we need to thow this because clone() requires . It is checked one
+        // return super.clone();         //this is a shallow copy;        
+// this is deep copy
+        Human twin = (Human)super.clone(); // this is actually shallow copy
+
+        // make a deep copy
+        twin.arr = new int[twin.arr.length];
+        for (int i = 0; i < twin.arr.length; i++) {
+            twin.arr[i] = this.arr[i];
+        }
+        return twin;
+    }
+
+
+now we can use it as Human twin = (Human)Kunal.clone();    //typecasting because we are returning an Object type.
+
+SHALLOW AND DEEP COPY :-
+Shallow copy means that object will be copied such that all primitives will be copied but for non primitives data types it will be referencing to the same object that is its copy will not be created.
+
+Deep copy means that copy for all primitives and non primitives will be created.
