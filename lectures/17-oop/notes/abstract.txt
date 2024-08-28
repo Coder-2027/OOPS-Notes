@@ -124,3 +124,5 @@ Static methods belong to the class itself, not to any specific instance of the c
 Method Binding Happens at Compile-Time:
 
 Static methods are bound to their definitions at compile-time, not at runtime. In contrast, overridden methods (which are instance methods) are resolved at runtime based on the actual object. Since static methods are resolved at compile-time, the concept of overriding, which depends on runtime behavior, does not apply to them.
+
+Static methods inside an interface cant be overridden so it is essential for us to define their body inside interface.
