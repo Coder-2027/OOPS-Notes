@@ -93,7 +93,7 @@ class Codechef implements A, B
 {
         // public :
     @Override
-       public  void fun(){
+       public  void fun(){			//will also override default method of interface A.	And we are needded to make it public before overriding  because it was initialy inside interface a public method so we cant increaes its security here ( Or make it more bounded )
             System.out.println("Inside Codechef Class");
         }
 	public static void main (String[] args) throws java.lang.Exception
