@@ -7,7 +7,20 @@ Reuse my code for various data types
 Type safety -> so that we can add only defined data types only.
 ArrayList <data_type> here data_type cannt be of primitive type. like int, float etc.
 data_type : Integer
+public class CustomGenArrayList<T> {
 
+    private Object[] data;
+    private static int DEFAULT_SIZE = 10;
+    private int size = 0; // also working as index value
+
+    public CustomGenArrayList() {
+        data = new Object[DEFAULT_SIZE];               //new T[Default_Size]      ->     will give compile time error because of type checking at compile time, and if  while making byte code it doesnt know value of T, and creation of object at run time will not be possible.     Inoredr to avoid it we CAN either use Object or pass obj reference in parameter??.
+    }
+
+We cannt create static field having typed parameter (T). Beacuse if we create different objects having different type than the question would be what is the type of static field. Since it is static so it doesnt depend on object.
+We cant use instanceof because it occurs at run time.
+At compile time we dont have any info
+We cannot create an instance of generic type
 
 An enumeration is a list of named constants.
 In Java, an enumeration defines a class type.
@@ -59,3 +72,17 @@ will be equal only if they both refer to the same constant,within the same enume
 Simply having ordinal values in common will not cause equals( ) to return true if the two constants
 are from different enumerations. Remember, you can compare two enumeration references for equality by using ==.
 
+ERROR VS EXCEPTION :-
+Error -> is caused due to lack of resources Ex. statck overflow, error is non recoverable that is we cant write code to handle it
+Exception -> prevents normal flow of program, divide by 0. or using null ppointer
+
+In java there is a class that handles all exceptions - Throwable class
+
+Throwable inherits from Object class which is further inherited by Exception and Errors class
+Exceptions are of two types :
+CHECKED : checked during compile time ex. if we give a file location and file doesnt occur there then this wil give FileNotFound exception
+UNCHECKED : Runtime 
+
+Runtime Exception extends Exception which is further extended by Arithematic Exception which checks at compile time.
+
+Yes, an ArithmeticException in Java is an unchecked exception. This means it is a subclass of RuntimeException, and the compiler does not require it to be caught or declared in a method's throws clause.
