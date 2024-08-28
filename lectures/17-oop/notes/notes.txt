@@ -86,3 +86,37 @@ UNCHECKED : Runtime
 Runtime Exception extends Exception which is further extended by Arithematic Exception which checks at compile time.
 
 Yes, an ArithmeticException in Java is an unchecked exception. This means it is a subclass of RuntimeException, and the compiler does not require it to be caught or declared in a method's throws clause.
+
+public class Main {
+    public static void main(String[] args) {
+        int a = 5;
+        int b = 0;
+        try {
+//            divide(a, b);
+            // mimicing
+            String name = "Kunal";
+            if (name.equals("Kunal")) {
+                throw new MyException("name is kunal");
+            }
+        } catch (MyException e) {
+            System.out.println(e.getMessage());
+        } catch (ArithmeticException e) {
+            System.out.println(e.getMessage());
+        } catch (Exception e) {
+            System.out.println("normal exception");
+        } finally {
+            System.out.println("this will always execute");
+        }
+
+    }
+
+    static int divide(int a, int b) throws ArithmeticException{
+        if (b == 0) {
+            throw new ArithmeticException("please do no divide by zero");            //explicitly throwing an object of exception
+        }
+
+        return  a / b;
+    }
+}
+
+throw means we are throwing a new exception , whereas throws means to declare exception that is it tells the calling class that it may throw an exception
