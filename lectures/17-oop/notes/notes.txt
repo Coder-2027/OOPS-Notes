@@ -1,3 +1,14 @@
+LEC - 6 :-
+ARRAYLIST :      when arraylist gets fulled it gets doubled in size.     ->     Internally creates a new array of double the size copies all the elements in it. ( Grows exponentially ) takes constant time on an AVERAGE. Internally it gets stored inside an array. But this array is private that is we cant change it directly we can change it using functions.
+
+ArrayList<String> list = new ArrayList<>();               // where String is indicating that we can put any data type here   ->  GENERICS.
+GENERICS :- 
+Reuse my code for various data types 
+Type safety -> so that we can add only defined data types only.
+ArrayList <data_type> here data_type cannt be of primitive type. like int, float etc.
+data_type : Integer
+
+
 An enumeration is a list of named constants.
 In Java, an enumeration defines a class type.
 By making enumerations into classes, the capabilities of the enumeration are greatly expanded.
