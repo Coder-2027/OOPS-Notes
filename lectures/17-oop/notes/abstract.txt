@@ -116,3 +116,11 @@ interface A{
 interface B{
     void fun();
 }
+
+WHY STATIC METHOD CANT BE OVERRIDDEN?
+Static Methods Are Not Associated with Instances:
+
+Static methods belong to the class itself, not to any specific instance of the class. Overriding in Java is based on polymorphism, where a method call is resolved at runtime based on the actual object type. Since static methods are tied to the class rather than to objects, they do not participate in runtime polymorphism.
+Method Binding Happens at Compile-Time:
+
+Static methods are bound to their definitions at compile-time, not at runtime. In contrast, overridden methods (which are instance methods) are resolved at runtime based on the actual object. Since static methods are resolved at compile-time, the concept of overriding, which depends on runtime behavior, does not apply to them.
