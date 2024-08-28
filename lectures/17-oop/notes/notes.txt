@@ -91,14 +91,14 @@ public class Main {
     public static void main(String[] args) {
         int a = 5;
         int b = 0;
-        try {
+        try {                                            //WHILE using throws keyword and having a runtime exception we may or may not write try catch block     k
 //            divide(a, b);
             // mimicing
             String name = "Kunal";
             if (name.equals("Kunal")) {
                 throw new MyException("name is kunal");
             }
-        } catch (MyException e) {
+        } catch (MyException e) {                    //add more strict exception first
             System.out.println(e.getMessage());
         } catch (ArithmeticException e) {
             System.out.println(e.getMessage());
@@ -120,3 +120,6 @@ public class Main {
 }
 
 throw means we are throwing a new exception , whereas throws means to declare exception that is it tells the calling class that it may throw an exception
+
+MAKING OUR OWN EXCEPTION :-
+
