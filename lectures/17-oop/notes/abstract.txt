@@ -87,3 +87,32 @@ After giving a name to your Annotation, you will need to create a block of state
 
 Using default methods we can extend interface without breaking the existing code because if we introduce a method inside interface then we will be req to define it everywhere where it is implemented making it default and writing its body prevents it.
 But default method can also create ambiguity as we were facing in multiple inheritance if two interfaces have same default methods havng there body thn the class implementing both these interfaces will face an ambiguity which default methods to use
+
+class Codechef implements A, B
+
+{
+        // public :
+    @Override
+       public  void fun(){
+            System.out.println("Inside Codechef Class");
+        }
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		// your code goes here
+        
+        // Codechef obj = new Codechef();
+        // obj.fun();
+        fun();                                        //will not be able to call because it is nonstatic and reuires an object, that is why w generally say a static method can call anither static metod.
+	}
+}
+
+interface A{
+    // default void fun(){
+    //     System.out.println("Inside interface A");
+    // }
+    void fun();
+}
+
+interface B{
+    void fun();
+}
