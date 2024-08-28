@@ -45,11 +45,13 @@ No, when you compile a Java program, the compiler does not create a separate .cl
 Abstract class vs Interface:
 
 Type of methods:
-Interface can have only abstract methods.
+Interface can have only abstract methods but default methods are also allowed.
+Yes, Java interfaces can have default methods, as well as abstract and static methods
 Abstract class can have abstract and non-abstract methods. From Java 8, it can have default and static methods also.
 
 Final Variables:
-Variables declared in a Java interface are by default final.
+Variables declared in a Java interface are by default final and static.
+They are final because we know interfaces cant have constructors which will initialize those varibles, final variables aways needs to get initialized.
 An abstract class may contain non-final variables.
 
 Type of variables:
@@ -71,3 +73,17 @@ an abstract class can extend another Java class and implement multiple Java inte
 Accessibility of Data Members:
 Members of a Java interface are public by default.
 A Java abstract class can have class members like private, protected, etc.
+
+public interface engine{        }
+
+we can also have an interface name as reference variable type to refer to some class who s implementing it.
+Dynamic method look up at runtime - so interfaces should be used in codes that are performance critical.
+When an interface usinherited from another interface then we use keyword extends.
+Annotation is also an interface
+Annotations are a form of metadata that provide information about the program but are not a part of the program itself. An Annotation does not affect the operation of the code they Annotate. 
+To create your own Java Annotation you must use @interface Annotation_name, this will create a new Java Annotation for you.
+The @interface will describe the new annotation type declaration.
+After giving a name to your Annotation, you will need to create a block of statements inside which you may declare some variables.
+
+Using default methods we can extend interface without breaking the existing code because if we introduce a method inside interface then we will be req to define it everywhere where it is implemented making it default and writing its body prevents it.
+But default method can also create ambiguity as we were facing in multiple inheritance if two interfaces have same default methods havng there body thn the class implementing both these interfaces will face an ambiguity which default methods to use
