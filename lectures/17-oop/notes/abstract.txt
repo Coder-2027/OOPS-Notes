@@ -1,3 +1,11 @@
+Sometimes we want to create a parebt class that defines what to do aad not how to do. Generalized form that is gonna shared by evyone whho inherits it.
+
+Creating instance variable, constructor, normal methods ( having body which may or maynot be overridden), static methods and variable inside a body is allowed.
+We cant create abstract constructtor, we cant mark static methods as abstract because we know static methods are not meant to be overridden but making them abstract will mean that they need to get overridden .
+We can also use abstract class name for the purpose of declaring reference variable typee pointing to any subclass ( Dynamic method dispatch ).
+We can also  not ut final before abstarct class because outting final doesnt allow a class to get inherited.But we can have final methods and variables but methods must not be abstract
+
+
 Sometimes you will want to create a superclass that only defines a generalized form that will be shared by all of its
 subclasses, leaving it to each subclass to fill in the details. Such a class determines the nature of the methods that
 the subclasses must implement.
