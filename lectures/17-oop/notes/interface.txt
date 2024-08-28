@@ -122,3 +122,20 @@ i.e. static interface methods should have a body! They cannot be abstract.
 
 NOTE : when overriding methods, the access modifier should be same or better i.e. if in Parent Class it was protected, then then overridden should be either protected or public.
 
+                                                    NESTED INTERFFACE :-
+
+  package com.kunal.interfaces.nested;
+  
+  public class A {
+      // nested interface
+      public interface NestedInterface {                    //Nested Interface can be public, protected or private
+          boolean isOdd(int num);
+      }
+  }
+  
+  class B implements A.NestedInterface {                  //top level interface needs to be public or default
+      @Override
+      public boolean isOdd(int num) {
+          return (num & 1) == 1;
+      }
+  }
