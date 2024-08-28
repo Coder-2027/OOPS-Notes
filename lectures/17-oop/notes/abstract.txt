@@ -3,7 +3,8 @@ Sometimes we want to create a parebt class that defines what to do aad not how t
 Creating instance variable, constructor, normal methods ( having body which may or maynot be overridden), static methods and variable inside a body is allowed.
 We cant create abstract constructtor, we cant mark static methods as abstract because we know static methods are not meant to be overridden but making them abstract will mean that they need to get overridden .
 We can also use abstract class name for the purpose of declaring reference variable typee pointing to any subclass ( Dynamic method dispatch ).
-We can also  not ut final before abstarct class because outting final doesnt allow a class to get inherited.But we can have final methods and variables but methods must not be abstract
+We can also  not ut final before abstarct class because outting final doesnt allow a class to get inherited.But we can have final methods and variables but methods must not be abstract.
+Yes, final methods can be inherited. However, they cannot be overridden in the subclass. Multiple inheritance is not alllowed we cant create more than one abstract class and then inherit it
 
 
 Sometimes you will want to create a superclass that only defines a generalized form that will be shared by all of its
@@ -38,6 +39,8 @@ A public constructor on an abstract class doesn't make any sense because you can
 (can only instantiate through a derived type that itself is not marked as abstract)
 Check: https://stackoverflow.com/questions/260666/can-an-abstract-class-have-a-constructor
 
+In interface methods are by default public and abstract, and variables are static and final -> not dependent on object.
+No, when you compile a Java program, the compiler does not create a separate .class file for an interface.
 
 Abstract class vs Interface:
 
