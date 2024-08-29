@@ -22,9 +22,48 @@ We cant use instanceof because it occurs at run time.
 At compile time we dont have any info
 We cannot create an instance of generic type
 
+COLLECTION FRAMEWORK :
+Framework is collection of files which we can reuse.
+Collection and map are interfaces. Collection framework consist of many interfaces which are used to implement different data structure providing common names for methods to mani[ulate them, this was done to reduce different function names for different ds which were performing same function of removeal, add etc.
+
+List <Integer> list = new ArrayList<>();       = new LinkedList<>();
+
+See collection framework diagram.
+VECTOR :- 
+How vector is differrent from ArrayList ?
+Vector is sycronized that is only one thread can acces it at a time. Whereas in arrayList more than one thread can access it. Vector also internally implements List interface same as ArrayList but iys internal implementation is different.
+If there is a thread which is using a vector then other thread which tries to access it will be put in Wait state. SO comparitively ArrayList is faster.
+
 An enumeration is a list of named constants.
 In Java, an enumeration defines a class type.
 By making enumerations into classes, the capabilities of the enumeration are greatly expanded.
+
+public class Basic {
+    enum Week{
+        Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday
+        //these are enum constants
+//public static and final. Since its static so we can access it using Week
+//Since its final so we cannot create child enums.
+//Type is week     
+        Week(){
+            //Constructor    ->    this is not public otr protected only private or default because if it was nort public or protected then it will result in initialization of more than one object and what we want  is constant number of objects for week. if we want to fix group of objects.
+            //here we can have only 7 objects.
+so when this constructor is called it will make object of all mentioned names of object.
+            //internally it works as -> public static final Week Monday = new Week();
+        }
+    }
+
+    psvm(){
+        Week week = Week.Monday;
+        for(Week day : Week.values()){
+            sop(day);
+        }
+        sop(week.ordinal());                //where ordinal refers to position of enum declaration. here 0 for Monday Beacuse weel is initialized to Monday. Ordinal is like order ( Index )
+        week.hello();             //where hello is the meethod which is written in interface A which we can be implemented by Week
+    }
+}
+
+
 
 An enumeration is created using the enum keyword.
 Enum declaration can be done outside a Class or inside a Class but not inside a Method
@@ -42,7 +81,7 @@ Enum and Inheritance :
 -All enums implicitly extend java.lang.Enum class. As a class can only extend one parent in Java,
 so an enum cannot extend anything else.
 -An enum cannot be a superclass.
--toString() method is overridden in java.lang.Enum class, which returns enum constant name.
+-toString() method is overridden in java.lang.Enum class, which returns enum constant name. if inside construuctor we try to print "this"
 -enum can implement many interfaces.
 
 Two enumeration constants can be compared for equality by using the == relational operator.
@@ -63,7 +102,7 @@ of enum class loading.
 -This is totally against enum concept.
 
 enum and methods :
-enum can contain concrete methods only i.e. no any abstract method.
+enum can contain concrete methods only i.e. no any abstract method. Because we know it cannot be inherited.
 
 You can compare for equality an enumeration constant with any other object by using equals( ),
 which overrides the equals( ) method defined by Object.
