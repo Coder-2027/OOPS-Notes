@@ -40,7 +40,7 @@ public class Derived extends packageOne.Base{
 //if above line was always true then threr have been no difference between private, protected, public.
         Intution is that here Base class doesnt know whether Derived is extending Base or not.
         new Derived().display();    // is working
-        display();//is working
+        display();//is working                        because show method is not static here.
     }
 }
 
